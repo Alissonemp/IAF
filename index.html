@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101722">
+  <title>IAF | Sistema Institucional</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section class="login-screen" id="login-screen">
+    <div class="login-panel">
+      <div class="login-brand">
+        <div class="brand-emblem">IAF</div>
+        <div><strong>IAF</strong><span>SISTEMA INSTITUCIONAL</span></div>
+      </div>
+      <div class="login-eyebrow"><span></span> AMBIENTE DE ACESSO RESTRITO</div>
+      <h1>Identificação</h1>
+      <p class="login-subtitle">Informe sua senha institucional para acessar o sistema.</p>
+      <form id="login-form" autocomplete="on">
+        <label for="login-password">Senha de acesso</label>
+        <div class="password-wrap">
+          <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Digite sua senha" required autofocus>
+          <button type="button" class="password-toggle" id="toggle-password" aria-label="Mostrar senha">◉</button>
+        </div>
+        <div class="login-options"><span>ACESSO MONITORADO</span></div>
+        <button class="login-submit" type="submit">ACESSAR SISTEMA <span>→</span></button>
+        <p class="login-feedback" id="login-feedback" role="alert"></p>
+      </form>
+      <div class="login-foot"><span class="status-dot"></span> CONEXÃO LOCAL DE DEMONSTRAÇÃO <span class="login-version">IAF · V0.5.1</span></div>
+    </div>
+    <div class="demo-warning">PROTÓTIPO: autenticação demonstrativa, sem conexão com servidor.</div>
+  </section>
+
+  <div class="app hidden" id="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-emblem">IAF</div>
+        <div class="brand-copy"><strong>IAF</strong><span>SISTEMA INSTITUCIONAL</span></div>
+      </div>
+      <div class="side-caption">AMBIENTE INTERNO</div>
+      <nav class="navigation" aria-label="Navegação principal">
+        <button class="nav-link active" data-view="overview"><span class="nav-symbol">▦</span> Visão geral</button>
+        <button class="nav-link" data-view="explore"><span class="nav-symbol">⌕</span> Explore</button>
+        <div class="nav-divider"></div>
+        <div class="side-caption">ADMINISTRAÇÃO</div>
+        <button class="nav-link" data-view="documents"><span class="nav-symbol">▤</span> Documentos</button>
+        <button class="nav-link" data-view="editor"><span class="nav-symbol">✎</span> Editor de documentos</button>
+        <button class="nav-link" data-view="devices"><span class="nav-symbol">▣</span> Conexão entre dispositivos</button>
+        <button class="nav-link" data-view="locations"><span class="nav-symbol">⌖</span> Localização de dispositivos</button>
+        <button class="nav-link" data-view="projects"><span class="nav-symbol">▣</span> Projetos</button>
+        <button class="nav-link" data-view="assets"><span class="nav-symbol">◫</span> Patrimônio</button>
+        <button class="nav-link" data-view="purchases"><span class="nav-symbol">▧</span> Compras</button>
+        <button class="nav-link" data-view="maintenance"><span class="nav-symbol">⚙</span> Manutenção</button>
+        <div class="nav-divider"></div>
+        <div class="side-caption">CONTROLE DO SISTEMA</div>
+        <button class="nav-link" data-view="users"><span class="nav-symbol">♙</span> Usuários e acessos</button>
+        <button class="nav-link" data-view="audit"><span class="nav-symbol">≡</span> Registros de auditoria</button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="connection"><span class="status-dot"></span><span>AMBIENTE DE TESTE</span></div>
+        <div class="user-card">
+          <div class="user-avatar" id="sidebar-avatar">AD</div>
+          <div class="user-meta"><strong id="sidebar-name">Administrador</strong><span>Administrador do sistema</span></div>
+          <button class="more-button" id="logout-button" aria-label="Sair do sistema" title="Sair">↪</button>
+        </div>
+        <div class="version">IAF SYSTEM <span>v0.5.1</span></div>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>IAF</span><b>/</b><strong id="crumb-current">Visão geral</strong></div>
+        <div class="topbar-right">
+          <div class="secure-label"><span class="status-dot"></span> SESSÃO DE DEMONSTRAÇÃO</div>
+          <div class="topbar-separator"></div>
+          <div class="date-label" id="today-label">--</div>
+          <div class="top-avatar" id="top-avatar">AD</div>
+        </div>
+      </header>
+      <section class="content" id="content-view">
+        <div class="welcome-row">
+          <div><div class="eyebrow"><span class="eyebrow-line"></span> PAINEL INSTITUCIONAL</div><h1>Visão geral</h1><p class="lead">Visão administrativa do ambiente e dos recursos institucionais.</p></div>
+          <div class="welcome-meta"><span class="meta-label">CLASSIFICAÇÃO</span><strong>USO INTERNO</strong></div>
+        </div>
+        <div class="notice"><span class="notice-icon">i</span><div><strong>Ambiente demonstrativo</strong><p>Os dados desta versão são exemplos e ficam apenas nesta sessão do navegador. Não utilize informações reais.</p></div></div>
+        <div class="section-title"><div><span class="section-index">01</span><h2>Resumo administrativo</h2></div><span class="section-note">DADOS ILUSTRATIVOS</span></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-head"><span>DOCUMENTOS</span><span class="stat-icon">▤</span></div><div class="stat-value">024</div><div class="stat-foot">Registros demonstrativos</div></article>
+          <article class="stat-card"><div class="stat-head"><span>PROJETOS</span><span class="stat-icon">▣</span></div><div class="stat-value">006</div><div class="stat-foot">Em acompanhamento</div></article>
+          <article class="stat-card"><div class="stat-head"><span>PATRIMÔNIO</span><span class="stat-icon">◫</span></div><div class="stat-value">038</div><div class="stat-foot">Itens ilustrativos</div></article>
+          <article class="stat-card"><div class="stat-head"><span>USUÁRIOS</span><span class="stat-icon">♙</span></div><div class="stat-value" id="user-count-card">001</div><div class="stat-foot">Contas nesta demonstração</div></article>
+        </div>
+        <div class="dashboard-grid">
+          <section class="panel activity-panel"><div class="panel-heading"><div><span class="section-index">02</span><h2>Atividade administrativa</h2></div><button class="text-button" data-view="audit">Ver registros →</button></div>
+            <div class="activity-list"><div class="activity-item"><div class="activity-marker blue-marker"></div><div class="activity-body"><strong>Sessão de demonstração iniciada</strong><span>Controle do sistema · Agora</span></div><span class="activity-type">ACESSO</span></div><div class="activity-item"><div class="activity-marker gray-marker"></div><div class="activity-body"><strong>Estrutura inicial do IAF carregada</strong><span>Sistema · Nesta sessão</span></div><span class="activity-type">SISTEMA</span></div></div>
+          </section>
+          <section class="panel quick-panel"><div class="panel-heading"><div><span class="section-index">03</span><h2>Acesso rápido</h2></div></div><div class="quick-links">
+            <button data-view="users"><span class="quick-icon">♙</span><span><strong>Cadastrar usuário</strong><small>Gerenciar contas e acessos</small></span><b>↗</b></button>
+            <button data-view="documents"><span class="quick-icon">▤</span><span><strong>Novo documento</strong><small>Abrir editor institucional</small></span><b>↗</b></button>
+            <button data-view="explore"><span class="quick-icon">⌕</span><span><strong>Explorar recursos</strong><small>Conhecer os módulos</small></span><b>↗</b></button>
+          </div></section>
+        </div>
+        <div class="bottom-strip"><div><span class="strip-mark">IAF</span><span><strong>PLATAFORMA INSTITUCIONAL</strong><small>Gestão administrativa interna</small></span></div><span class="strip-right">ACESSO AUTORIZADO · AMBIENTE DE TESTE</span></div>
+        <footer>IAF — SISTEMA INSTITUCIONAL <span>•</span> PROTÓTIPO <span>•</span> V0.3.0</footer>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
